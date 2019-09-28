@@ -139,7 +139,7 @@ where
         R: Rng + ?Sized,
         Sh: ShapeBuilder<Dim = D>,
     {
-        Self::from_shape_fn_memory_order(shape, |_| dist.sample(rng))
+        Self::from_shape_simple_fn(shape, move || dist.sample(rng))
     }
 }
 
